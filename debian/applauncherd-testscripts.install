@@ -1,0 +1,14 @@
+usr/share/applauncherd-testscripts/test-func-launcher.py
+usr/share/applauncherd-testscripts/ts_prestartapp.rb
+usr/share/applauncherd-testscripts/check_pipes.py
+usr/share/applauncherd-testscripts/test-perf-mbooster.py
+usr/share/applauncherd-testscripts/tc_theming.rb
+usr/share/applauncherd-testscripts/test-perf.rb
+usr/share/applauncherd-testscripts/get-coordinates.rb
+usr/share/applauncherd-testscripts/utils.py
+usr/share/applauncherd-testscripts/test-security.py
+usr/bin/fala_wid
+usr/share/applauncherd-testscripts/fala_xres_wl
+usr/share/applauncherd-testscripts/fala_xres_wol
+usr/share/applauncherd-testscripts/signal-forward/*
+usr/share/applauncherd-testscripts/test-single-instance.py

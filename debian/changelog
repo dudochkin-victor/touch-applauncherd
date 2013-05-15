@@ -1,0 +1,449 @@
+applauncherd (0.18.1) stable; urgency=low
+
+  * Fixes: NB#211246 - Policy framework cannot detect the launch of a boosted applications
+  * Fixes: NB#226224 - applauncherd-dev is missing a dependency to applauncherd
+
+ -- Nimika Keshri <nimika.1.keshri@nokia.com>  Wed, 09 Feb 2011 11:48:51 +0200
+
+applauncherd (0.18.0) unstable; urgency=low
+
+  * Changes: Check that DISPLAY exists in launcher.c
+  * New: QML booster added
+  * New: qml booster tests added
+  * New: Boot mode tests added
+  * New: single instance tests added
+
+ -- Antti Kervinen <antti.kervinen@nokia.com>  Thu, 03 Feb 2011 11:40:00 +0200
+
+applauncherd (0.17.1) stable; urgency=low
+
+  * Changes: Broken tests fixed
+
+ -- Nimika Keshri <nimika.1.keshri@nokia.com>  Mon, 24 Jan 2011 10:33:38 +0200
+
+applauncherd (0.17.0) stable; urgency=low
+
+  * Fixes: NB#212024 - Application launcher should be usable (improve performance) also at boot
+  * Fixes: NB#220076 - applauncherd.bin does not work without link to /tmp/m.themedaemon
+  * Changes: support for --boot-mode in applauncherd.bin
+  * Changes: support for --help in applauncherd.bin
+  * Changes: support for --single-instance in invoker
+  * Changes: --debug argument problem fixed in preloading
+  * Changes: Corrected error on test-perf-mbooster.py
+  * Changes: Commented out the single-instance test case skeletons
+  * Changes: Removed invoker fallback to execve
+  * Changes: References to .launch removed from README. Some minor fixes.
+  
+ -- Jussi Lind <jussi.lind@nokia.com>  Mon, 17 Jan 2011 15:53:15 +0200
+
+applauncherd (0.16.1) stable; urgency=low
+  
+  * Changes: WRT Booster and related tests removed.
+  * Changes: Library preloading warnings are printed only if --debug commandline parameter is given.
+  * Fixes: NB#217662 - applauncherd depends on WRT
+
+ -- Antti Kervinen <antti.kervinen@nokia.com>  Thu, 13 Jan 2011 12:00:00 +0200
+
+applauncherd (0.16.0) stable; urgency=low
+
+  * Changes: Single instance test skeletons added
+
+ -- Olli Leppanen <olli.leppanen@nokia.com>  Thu, 13 Jan 2011 15:18:00 +0200
+
+applauncherd (0.16.0) stable; urgency=low
+
+  * Changes: Boosters loaded as plugins.
+  * Changes: New test added that checks that booster pid is acquired by application started using booster
+  * Changes: Changed wait time between button press and release from 100ms to 200ms in pixelchanged.
+  * Changes: Single-instance binary added
+  * Fixes: NB#214093 - application started with launcher has wrong name in the process list
+  * Fixes: NB#216191 - Lack of single instance support for qml applications 
+  * Fixes: NB#216196 - Boosters are not loaded as plugins 
+
+ -- Juha Lintula <juha.lintula@nokia.com>  Wed, 12 Jan 2011 12:00:00 +0200
+
+applauncherd (0.15.10) stable; urgency=low
+
+  * Fixes: NB#211510 - boosters should update oom_adj to 0 before calling main
+  * Changes: Some comments made clearer / added.
+  * Changes: Code refactoring done for tests. Debugs added.
+
+ -- Jussi Lind <jussi.lind@nokia.com>  Wed, 15 Dec 2010 13:00:08 +0200
+
+applauncherd (0.15.9) stable; urgency=low
+
+  * Changes: Add possibility to track 2 pixels at a time to pixelchanged
+             and increase the delay between mouse press and release to 100ms
+  * Changes: Performance test uses pixelchanged with two tracked pixels
+  * Fixes: NB#207781 - Some applications do not load QAccessibleBridgePlugin plug-ins
+
+ -- Juha Lintula <juha.lintula@nokia.com>  Thu, 09 Dec 2010 14:59:32 +0200
+
+applauncherd (0.15.8) stable; urgency=low
+
+  * Changes: Added a workaround to startup time tests from grid to make them work
+  * Fixes: NB#210094 - files cleanup for applauncherd/booster-m
+
+ -- Olli Leppanen <olli.leppanen@nokia.com>  Mon, 06 Dec 2010 18:21:06 +0200
+
+applauncherd (0.15.7) stable; urgency=low
+
+  * Changes: Install libapplauncherd.so to /usr/lib/applauncherd/libapplauncherd.so
+  * Changes: Some useless X11 modules removed from fala_windowid's CMakeLists.txt
+  * Startup time tests polished
+
+ -- Jussi Lind <jussi.lind@nokia.com>  Fri, 03 Dec 2010 11:21:06 +0200
+
+applauncherd (0.15.6) stable; urgency=low
+
+  * Changes: Added the windowid binary to be used in startup tests
+
+ -- Olli Leppanen <olli.leppanen@nokia.com>  Tue, 30 Nov 2010 16:04:57 +0200
+
+applauncherd (0.15.5) stable; urgency=low
+
+  * Fixes: NB#206309 - applauncherd cannot locate shared objects 
+  * Changes: Changed again component names in meegotouchhome in test scripts
+  * Changes: pixelchanged can raise a window with -r.
+  * Changes: build env variable for Harmattan added
+
+ -- Nimika Keshri <nimika.1.keshri@nokia.com>  Tue, 30 Nov 2010 14:04:57 +0200
+
+applauncherd (0.15.4) stable; urgency=low
+
+  * Changes: Modified component names in startup time tests
+
+ -- Olli Leppanen <olli.leppanen@nokia.com>  Fri, 26 Nov 2010 16:47:26 +0200
+
+applauncherd (0.15.3) stable; urgency=low
+
+  * Implemented: SWP#DUI-4131
+  * Changes: Changed warning message when library can't be preloaded
+  * Changes: Modified the startup time tests to be more reliable
+
+ -- Nimika Keshri <nimika.1.keshri@nokia.com>  Fri, 26 Nov 2010 13:47:26 +0200
+
+applauncherd (0.15.2) stable; urgency=low
+
+  * Changes: Fixed crash of booster-m and booster-w / non-quitting booster-m caused
+             by erroneous handling of SIGHUP. No more QThread warnings related to
+             QSocketNotifier. Removed SIGHUP handler from main.cpp
+             (Set in mbooster.cpp and wrtbooster.cpp. Default behavior is 
+              always exit() anyway).
+  * Changes: A bit confusing Booster::readCommand() renamed to
+    Booster::receiveDataFromInvoker().
+  * Changes: Access Booster::m_connection and Booster::m_appData through setter
+    /getter in derived classes.
+  * Changes: License plates added to some test apps.
+  * Changes: fala_gettime.cpp => fala_gettime.c, fala_gettime_ms.cpp => fala_gettime_ms.c.
+  * Changes: Default C-flags added to top-level CMakeLists.
+  * Changes: pixelchanged test app: use pkg-config for x11, xtst and xi. C flags set correctly. Warnings fixed.
+  * Fixes: NB#205006 - Redundant(?) booster-monitor processes takes a lot of memory
+  * Changed: Modified startup time tests to support command line starting and parameters
+
+ -- Jussi Lind <jussi.lind@nokia.com>  Wed, 24 Nov 2010 19:34:58 +0200
+
+applauncherd (0.15.1) stable; urgency=low
+
+  * Fixes: NB#201779 - cheap way how to load all libraries correct 
+  * Fixes: NB#206309 - applauncherd cannot locate shared objects
+  * Changes: Launcher library exports only main()
+  * Changes: Install /usr/bin/applauncherd.launcher to /usr/lib/libapplauncherd.so
+             due to dh_strip problems and because it's not -pie.
+  * Changes: Added the "startup time from application grid" test 
+  * Implemented: SWP#DUI-4282
+
+ -- Jussi Lind <jussi.lind@nokia.com>  Fri, 19 Nov 2010 14:20:22 +0200
+
+applauncherd (0.15.0) stable; urgency=low
+
+  * Changes: Basic implementation of library-based launcher
+  * Fixes: NB#205663 - crashes due to exit() is used in forked process
+
+ -- Jussi Lind <jussi.lind@nokia.com>  Fri, 19 Nov 2010 14:20:22 +0200
+
+applauncherd (0.14.6) stable; urgency=low
+
+  * Fixes: NB#199342 - Music-suite crashes when started using invoker
+  * Changes: Add test_invoker_search_prog to tests.xml
+  * Changes: Add a test for invoker searching PATH for programs
+  * Changes: Moved the implementation of MonitorBooster::boosterType() to the source file from the header file
+  * Changes: Remove invoke_recv_str as it is never used
+
+ -- Nimika Keshri <nimika.1.keshri@nokia.com>  Wed, 10 Nov 2010 11:51:05 +0200
+
+applauncherd (0.14.5) stable; urgency=low
+
+  * Changes: acceptance and validation flags removed for tests package
+  * Changes: Tests fixed as the default --wait-term made them fail
+  * Revert "Changes: Too exact library versions made more general in preload.h"
+  * Changes: no-wait option for invoker is added
+  * Changes: invoker - launcher protocol simplification
+
+ -- Nimika Keshri <nimika.1.keshri@nokia.com>  Tue, 02 Nov 2010 14:06:55 +0200
+
+applauncherd (0.14.4) stable; urgency=low
+
+  * Changes: use at() instead of [] operator to read-only access to vector elements
+  * Changes: clean-up preload library list
+  * Fixes: NB#199342 -  Music-suite crashes when started using invoker
+  * Changes: Too exact library versions made more general in preload.h
+  * Changes: Qt-styled Unix signal handling added to MBooster. Fixes the issue where booster-m
+    is not killed when launcher dies.
+  * Changes: Polished the credential filtering stuff in Booster, some comments added
+  * Changes: filter out invoker credentials from boosted applications
+  * Fixes: NB#178610 -  applauncherd/boosters potential optimizations
+  * Fixes: NB#196289 - applauncher.bin adds 3-28 extra file descriptors for nothing
+
+ -- Nimika Keshri <nimika.1.keshri@nokia.com>  Thu, 28 Oct 2010 13:57:03 +0300
+
+applauncherd (0.14.3) stable; urgency=low
+
+  * Changes: use RTLD_LOCAL flag instead of RTLD_GLOBAL in dlopen() to load application binary
+  * Changes: remove -rdynamic linker parameter
+  * Changes: package dependency changed from testrunner -> testrunner-lite
+
+ -- Nimika Keshri <nimika.1.keshri@nokia.com>  Tue, 12 Oct 2010 11:50:14 +0300
+
+applauncherd (0.14.2) stable; urgency=low
+
+  * Fixes: NB#195903 - applauncherd-launcher manifest refers to non-existing tokens ReadUserData/WriteUserData
+
+ -- Nimika Keshri <nimika.1.keshri@nokia.com>  Wed, 06 Oct 2010 15:10:22 +0300
+
+applauncherd (0.14.1) stable; urgency=low
+
+  * Changes: Compilation flag -Wno-psabi remove 
+  * Changes: Logger refactored, #ifdef _DEBUG => #ifndef DEBUG_LOGGING_DISABLED
+  * Changes: acceptConn() => accept(), closeConn() => close(), socket pool is cleared on closeAllSockets()
+
+ -- Nimika Keshri <nimika.1.keshri@nokia.com>  Wed, 06 Oct 2010 14:07:11 +0300
+
+applauncherd (0.14.0) stable; urgency=low
+
+  * Use WrtComponentCache
+  * Fixes: NB#194550 - applauncherd should have configurable delay when creating new booster process
+  * Added -Wno-psabi to CXX_FLAGS in order to suppress va_list mangling warnings originating from Qt.
+  * Logger::logErrorAndDie() prints also to stderr in order to help
+    debugging.
+  * MonitorBooster sends a message to Daemon, who kills MBooster and WRTBooster.
+  * New functional test for booster-killer added
+  * Hard-coded GConf key strings moved from monitorbooster.cpp to the top-level CMakeLists.txt
+  * Unit test for getBoosterPidForType() added to ut_boosterfactory
+  * Signal forwarding tests added for q-booster and w-booster
+  * Stopping applifed in the prestart-launcherd test to prevent forced killing of applications
+
+ -- Jussi Lind <jussi.lind@nokia.com>  Thu, 30 Sep 2010 17:20:32 +0300
+
+applauncherd (0.13.1) stable; urgency=low
+
+  * Fixes: NB#191847 - First application launched with m-booster after theme change crashes
+
+ -- Nimika Keshri <nimika.1.keshri@nokia.com>  Wed, 15 Sep 2010 10:21:17 +0300
+
+applauncherd (0.13.0) stable; urgency=low
+
+  * New: WRT Booster added
+  * New: BoosterFactory-class added
+  * Changes: Preloaded libraries are loaded with dlopen() (preload.h)
+
+ -- Jussi Lind <jussi.lind@nokia.com>  Mon, 06 Sep 2010 16:01:23 +0300
+
+applauncherd (0.12.1) stable; urgency=low
+
+  * Changes: Launcher uses creds_confine2 to reset credentials during transmogrification
+  * Fixes: NB#187583 -  Update application launcher to use creds_confine2() for credential setup
+  * Fixes: NB#187780 -  Booster robustness improvement: launch applications even without applauncherd
+
+ -- Antti Kervinen <antti.kervinen@nokia.com>  Mon, 30 Aug 2010 15:03:59 +0300
+
+applauncherd (0.11.0) stable; urgency=low
+
+  * Changes: Signal-forwarding tests added
+  * Changes: Test for invoker can launch applications even without applauncherd
+  * Changes: "Deprecated" applauncherd-dev and made it depend on libmeegotouch-dev
+  * Changes: wait-term parameter support for applications started without launcher
+  * Changes: invoker can launch applications even without applauncherd
+  * Changes: remove CAP::kill from invoker's aegis file
+  * Changes: Updates to meego packaging files. Submitted to devel:ux:handset.
+  * Changes: signals forwarding update
+  * Changes: daemon error messages refactoring
+  * Changes: added Connection::peersPid() method
+  * Changes: Handle PWD correctly
+  * Changes: pass pid of invoker from booster to launcher
+  * Changes: PROG_NAME separated into PROG_NAME_INVOKER and PROG_NAME_LAUNCHER
+  * Changes: invoker's receiving of booster process exit code refactoring
+  * Fixes: NB#187780 -  Booster robustness improvement: launch applications even without applauncherd
+
+ -- Nimika Keshri <nimika.1.keshri@nokia.com>  Mon, 30 Aug 2010 11:38:32 +0300
+
+applauncherd (0.10.3) stable; urgency=low
+
+  * Changes: pass and set gid and uid from invoker process to launcher
+
+ -- Nimika Keshri <nimika.1.keshri@nokia.com>  Fri, 20 Aug 2010 11:16:01 +0300
+
+applauncherd (0.10.2) stable; urgency=low
+
+  * Changes: close connection with invoker if --wait-term param is not used
+  * Changes: Replaced references to Matti with TDriver
+  * Changes: sending application exit status to invoker stubs, code refactoring
+  * Changes: return application's exit status to invoker
+  * Changes: Changed the order of provide and request in applauncherd-launcher.aegis
+
+ -- Nimika Keshri <nimika.1.keshri@nokia.com>  Tue, 17 Aug 2010 15:41:40 +0300
+
+applauncherd (0.10.1) stable; urgency=low
+
+  * Fixes: NB#184761 -  Application launched with applauncher does not generate core dumps
+
+ -- Nimika Keshri <nimika.1.keshri@nokia.com>  Wed, 11 Aug 2010 17:00:32 +0300
+
+applauncherd (0.10.0) stable; urgency=low
+
+  * debian/rules: DISABLE_VERIFICATION=1 added to other than arm and armel builds
+  * MeeGo packaging files added
+  * Fixed core dumping issues
+  * Close unused sockets in booster
+  * Fixes for test cases
+
+ -- Oskari Timperi <ext-oskari.timperi@nokia.com>  Wed, 11 Aug 2010 14:53:34 +0300
+
+applauncherd (0.9.0) stable; urgency=low
+
+  * Added CAP::setpcap to applauncherd's aegis file as a partial fix for NB#180963
+  * Testcase for invokers --delay parameter
+  * Testcase for applauncherd's --daemon parameter
+  * Fixed applauncherd's help printing when applauncherd is already running
+  * Fixed a credential test to have correct set of tokens
+
+ -- Oskari Timperi <ext-oskari.timperi@nokia.com>  Wed, 28 Jul 2010 11:13:37 +0300
+
+applauncherd (0.8.0) stable; urgency=low
+
+  * Fixes: NB#179266 -  terminating invoker --wait-term leaves launched process running
+  * a bug fixed in io descriptor count, previous rearrangement taken back
+  * test mode removed from ut_daemon, rearranged member variables in connection
+
+ -- Nimika Keshri <nimika.1.keshri@nokia.com>  Mon, 19 Jul 2010 12:17:36 +0300
+
+applauncherd (0.7.0-2) stable; urgency=low
+
+  * Fixes: NB#176326 -  Conndlgs launched using Applauncherd respawns until respawn limit
+
+ -- Antti Kervinen <antti.kervinen@nokia.com>  Tue, 07 Jul 2010 12:21:29 +0300
+
+applauncherd (0.7.0-1) stable; urgency=low
+
+  * Invoker waits for launched process to terminate when run with --wait-term
+  * Dbg packages added: applauncherd-dbg, applauncherd-invoker-dbg, applauncherd-launcher-dbg and applauncherd-testapps-dbg	
+  * Fixes: NB#177439, invoker starts reloading cache too soon
+  * Implemented: SWP#DUI-3384
+
+ -- Antti Kervinen <antti.kervinen@nokia.com>  Tue, 07 Jul 2010 10:10:29 +0300
+
+applauncherd (0.6.0-1) stable; urgency=low
+
+  * applauncherd-art-tests and applauncherd-bug-tests added
+
+ -- Nimika Keshri <nimika.1.keshri@nokia.com>  Thu, 24 Jun 2010 19:26:17 +0300
+
+applauncherd (0.5.0-3) stable; urgency=low
+
+  * Fixes: NB#174460, applauncherd-functional-tests package fails very frequently in ART
+  * Coverity tool fixes
+
+ -- Nimika Keshri <nimika.1.keshri@nokia.com>  Mon, 14 Jun 2010 19:26:20 +0300
+
+applauncherd (0.5.0-2) stable; urgency=low
+
+  * delay is initialized to DEFAULT_DELAY
+  * Refactored test application for performance tests
+
+ -- Nimika Keshri <nimika.1.keshri@nokia.com>  Mon, 07 Jun 2010 12:39:54 +0300
+
+applauncherd (0.5.0-1) stable; urgency=low
+
+  * Platform security feature improved
+  * mcomponentcache enabled
+  * disable LD_BIND_NOW environment variable
+  * added delay parameter to invoker, invoker debug logging disabled by default, code refactoring
+
+ -- Nimika Keshri <nimika.1.keshri@nokia.com>  Fri, 04 Jun 2010 12:18:59 +0300
+
+applauncherd (0.4.1-1) stable; urgency=low
+
+  * applauncherd-dev install meegotouch-boostable.prf for qmake
+  * Socket permissions set to 777
+  * Documentation updates
+  * Aegis tests updated / fixed
+
+ -- Jussi Lind <jussi.lind@nokia.com>  Thu, 27 May 2010 14:34:47 +0300
+
+applauncherd (0.4.0-1) stable; urgency=low
+
+  * Platform security stuff added: confine for the forked process + verification for the invoker (disabled for now)
+  * Applauncherd package divided into applauncherd-launcher and applauncherd-invoker
+  * Fixes: NB#170267, applauncherd-functional-tests package error
+  * applauncherd-dev installs meegotouch-boostable.pc that shows correct linker flags for applications
+  * Documentation updates
+
+ -- Jussi Lind <jussi.lind@nokia.com>  Thu, 20 May 2010 15:38:42 +0300
+
+applauncherd (0.3.1-1) stable; urgency=low
+
+  * Workaround: NB#168188, populating cache disabled for not allocating graphics memory
+
+ -- Antti Kervinen <antti.kervinen@nokia.com>  Mon, 17 May 2010 14:51:25 +0300
+
+applauncherd (0.3.0-1) stable; urgency=low
+
+  * Added the feature and requirements fields inside tests.xml files
+  * Updated functional and unit tests according the MBooster change
+  * Code refactoring 
+  * Implemented: SWP#DUI-2964
+
+ -- Olli Leppanen <olli.leppanen@nokia.com>  Tue, 05 May 2010 12:16:40 +0300
+
+applauncherd (0.2.0-5) stable; urgency=low
+
+  * Naming changes: libdui => libmeegotouch
+  * Unit tests are updated
+  * Implemented: SWP#DUI-2483
+
+ -- Alexey Shilov <alexey.shilov@nokia.com>  Tue, 27 Apr 2010 16:16:40 +0300
+
+applauncherd (0.2.0-4) stable; urgency=low
+
+  * applifed-performance-tests is trying to overwrite the file ./usr/bin/waitforwindow, which was provided by applauncherd-performance-tests 
+  * Fixes: NB#161251
+
+ -- Jussi Lind <jussi.lind@nokia.com>  Tue, 06 Apr 2010 13:59:16 +0300
+
+applauncherd (0.2.0-3) stable; urgency=low
+
+  * Instructions for developers added
+  * Process nice parameter passed from invoker to launcher
+  * Unit tests are updated
+  * Implemented: SWP#DUI-2127, SWP#DUI-2152
+
+ -- Alexey Shilov <alexey.shilov@nokia.com>  Fri, 11 Mar 2010 13:13:02 +0200
+
+applauncherd (0.2.0-2) stable; urgency=low
+
+  * Naming changes: launcher => applauncherd, applaucherd => applauncherd.bin
+
+ -- Jussi Lind <jussi.lind@nokia.com>  Mon, 08 Mar 2010 13:13:02 +0200
+
+applauncherd (0.2.0-1) stable; urgency=low
+
+  * First released version: basic launcher functionality with basic test set
+  * Implemented: SWP#DUI-2270, SWP#DUI-2128
+
+ -- Jussi Lind <jussi.lind@nokia.com>  Fri, 05 Mar 2010 11:16:03 +0200
+
+launcher (0.1.0-1) unstable; urgency=low
+
+  * Initial release
+
+ -- Jussi Lind <jussi.lind@nokia.com>  Fri, 12 Feb 2010 16:00:08 +0200

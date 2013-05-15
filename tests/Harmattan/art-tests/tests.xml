@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<testdefinition version="0.1">
+
+<!-- Test suite, name mandatory - the same as test package name -->
+  <!-- Schema: https://projects.maemo.org/docs/testing/xml-definition.html -->
+  <suite name="applauncherd-art-tests" domain="Application framework"> 
+
+    <set name="applauncherd-art-tests" description="Launcher functional tests" feature="AF Basic Launcher daemon support" requirement="300168">   
+      <pre_steps>
+          <step>/usr/bin/waitloadavg.rb -l 1.0 -p 1.0 -t 120</step>
+      </pre_steps>
+
+
+      <case name="applauncherd__test_launch_multiple_apps" type="Functional" description="To test that more than one applications are launched by the launcher" timeout="360" level="System">
+          <step expected_result="0">source /tmp/session_bus_address.user; DISPLAY=:0 `pyversions -d` /usr/share/applauncherd-testscripts/test-func-launcher.py test_launch_multiple_apps</step>
+      </case>
+
+      <case name="applauncherd__test_one_instance" type="Functional" description="To test that only one instance of a application exist" timeout="360" level="System">
+          <step expected_result="0">source /tmp/session_bus_address.user; DISPLAY=:0 `pyversions -d` /usr/share/applauncherd-testscripts/test-func-launcher.py test_one_instance</step>
+      </case>
+
+      <case name="applauncherd__test_zombie_state" type="Functional" description="To test that no Zombie process exist after the application is killed" timeout="360" level="System">
+          <step expected_result="0">source /tmp/session_bus_address.user; DISPLAY=:0 `pyversions -d` /usr/share/applauncherd-testscripts/test-func-launcher.py test_zombie_state</step>
+      </case>
+      
+      <environments>
+          <scratchbox>false</scratchbox>
+          <hardware>true</hardware>    
+      </environments>
+    </set>
+  </suite>
+</testdefinition>
+
+
